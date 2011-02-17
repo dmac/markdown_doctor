@@ -9,8 +9,8 @@ if ARGV.size < 1
 end
 
 HEADER = <<EOF
-<link href="https://assets0.github.com/stylesheets/bundle_common.css" type="text/csss" rel="stylesheet" />
-<link href="https://assets0.github.com/stylesheets/bundle_github.css" type="text/csss" rel="stylesheet" />
+<link href="https://assets0.github.com/stylesheets/bundle_common.css" type="text/css" rel="stylesheet" />
+<link href="https://assets0.github.com/stylesheets/bundle_github.css" type="text/css" rel="stylesheet" />
 <style type="text/css">
 #readme.announce {
 width: 920px;
