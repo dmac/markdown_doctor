@@ -3,11 +3,6 @@
 require "rubygems"
 require "rdiscount"
 
-if ARGV.size < 1
-  puts "Usage: markdown_doctor.rb <file>"
-  exit 1
-end
-
 HEADER = <<EOF
 <link href="https://assets0.github.com/stylesheets/bundle_common.css" type="text/css" rel="stylesheet" />
 <link href="https://assets0.github.com/stylesheets/bundle_github.css" type="text/css" rel="stylesheet" />
@@ -26,8 +21,7 @@ FOOTER = <<EOF
 </div>
 EOF
 
-filename = ARGV[0]
-text = IO.read(filename)
+text = ARGF.read
 markdown = RDiscount.new(text)
 output = HEADER + markdown.to_html + FOOTER
 puts output
