@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require "rubygems"
-require "rdiscount"
+require "redcarpet"
 
 HEADER = <<EOF
 <link href="https://assets0.github.com/stylesheets/bundle_common.css" type="text/css" rel="stylesheet" />
@@ -22,7 +22,6 @@ FOOTER = <<EOF
 EOF
 
 text = ARGF.read
-markdown = RDiscount.new(text)
+markdown = Redcarpet.new(text, :fenced_code)
 output = HEADER + markdown.to_html + FOOTER
 puts output
-
