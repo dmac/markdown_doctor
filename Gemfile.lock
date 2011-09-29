@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    markdown_doctor (0.2.0)
+      redcarpet (>= 2.0.0b5)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    redcarpet (2.0.0b5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  markdown_doctor!

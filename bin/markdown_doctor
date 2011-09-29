@@ -22,6 +22,7 @@ FOOTER = <<EOF
 EOF
 
 text = ARGF.read
-markdown = Redcarpet.new(text, :fenced_code)
-output = HEADER + markdown.to_html + FOOTER
+markdown_options = { :tables => true, :fenced_code_blocks => true, :space_after_headers => true }
+markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, markdown_options)
+output = HEADER + markdown.render(text) + FOOTER
 puts output
