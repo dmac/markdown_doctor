@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    markdown_doctor (0.1.0.1)
+      pygments.rb (~> 0.2.4)
+      redcarpet (~> 2.1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    blankslate (2.1.2.4)
+    ffi (1.0.11)
+    pygments.rb (0.2.4)
+      rubypython (~> 0.5.3)
+    redcarpet (2.1.0)
+    rubypython (0.5.3)
+      blankslate (>= 2.1.2.3)
+      ffi (~> 1.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  markdown_doctor!
