@@ -14,10 +14,9 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "markdown_doctor"
 
   s.executables = %w(markdown_doctor)
-  s.files = %w(
-    README.md
-    markdown_doctor.gemspec
-    bin/markdown_doctor
-  )
-  s.add_dependency("redcarpet", ">=1.13.1")
+  s.files = `git ls-files`.split("\n")
+
+  s.add_dependency("nokogiri", "~> 1.5.0")
+  s.add_dependency("pygments.rb", "~> 0.2.4")
+  s.add_dependency("redcarpet", "~> 2.1.0")
 end
