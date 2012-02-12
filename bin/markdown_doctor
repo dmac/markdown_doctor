@@ -41,7 +41,7 @@ def pygmentize_code_blocks(html)
 end
 
 text = ARGF.read
-markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :fenced_code_blocks => true)
-
+markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+    :fenced_code_blocks => true, :tables => true, :space_after_headers => true)
 output = HEADER + pygmentize_code_blocks(markdown.render(text)) + FOOTER
 puts output
