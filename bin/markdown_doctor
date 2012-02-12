@@ -2,6 +2,8 @@
 
 require "rubygems"
 require "redcarpet"
+require "nokogiri"
+require "pygments.rb"
 
 HEADER = <<EOF
 <link href="http://assets.github.com/stylesheets/bundles/github-92243db0daab07aa944d353c1ba062b9581bd321.css"
