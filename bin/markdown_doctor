@@ -25,7 +25,23 @@ FOOTER = <<EOF
 </div>
 EOF
 
+def pygmentize_code_blocks(html)
+  doc = Nokogiri::HTML(html)
+  code_blocks = doc.css("pre code[class]").map(&:parent)
+
+  code_blocks.each do |code|
+    language = code.child.attribute("class").value
+    pygmentized_html = Pygments.highlight(code.child.text, :lexer => language, :encoding => "utf-8",
+        :nowrap => true, :stripnl => false, :stripall => false)
+    new_node = Nokogiri::HTML.fragment(pygmentized_html)
+    code.replace(new_node)
+  end
+
+  doc.to_html
+end
+
 text = ARGF.read
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :fenced_code_blocks => true)
-output = HEADER + markdown.render(text) + FOOTER
+
+output = HEADER + pygmentize_code_blocks(markdown.render(text)) + FOOTER
 puts output
