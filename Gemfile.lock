@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    markdown_doctor (0.1.0.1)
+    markdown_doctor (0.3.0)
       nokogiri (~> 1.5.0)
       pygments.rb (~> 0.2.4)
       redcarpet (~> 2.1.0)
