@@ -1,10 +1,10 @@
 # Markdown Doctor
 
-An absurdly simple script that ganks github styles for your markdown.
+An absurdly simple script that renders your markdown to html.
 
 ### Installation
 
-markdown_doctor uses pygments for syntax highlighting code blocks.
+Markdown Doctor uses pygments for syntax highlighting code blocks.
 
     $ pip install pygments
     $ gem install markdown_doctor
@@ -28,4 +28,3 @@ Try putting this in your `.vimrc`:
 
     " Quickly display a markdown preview of the current buffer
     :map <leader>m :%w ! markdown_doctor \| bcat<CR><CR>
-
