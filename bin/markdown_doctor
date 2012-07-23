@@ -2,7 +2,6 @@
 
 require "rubygems"
 require "redcarpet"
-require "nokogiri"
 require "pygments.rb"
 
 HEADER = <<EOF
@@ -245,23 +244,15 @@ FOOTER = <<EOF
 </div>
 EOF
 
-def pygmentize_code_blocks(html)
-  doc = Nokogiri::HTML(html)
-  code_blocks = doc.css("pre code[class]").map(&:parent)
-
-  code_blocks.each do |code|
-    language = code.child.attribute("class").value
-    pygmentized_html = Pygments.highlight(code.child.text, :lexer => language, :encoding => "utf-8",
-        :nowrap => true, :stripnl => false, :stripall => false)
-    new_node = Nokogiri::HTML.fragment(pygmentized_html)
-    code.replace(new_node)
+class DoctoredRedcarpet < Redcarpet::Render::HTML
+  def block_code(code, language)
+    Pygments.highlight(code, :lexer => language, :encoding => "utf-8", :nowrap => true, :stripnl => false,
+                       :stripall => false)
   end
-
-  doc.to_html
 end
 
 text = ARGF.read
 markdown_options = { :fenced_code_blocks => true, :tables => true, :space_after_headers => true }
-markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, markdown_options)
-output = HEADER + pygmentize_code_blocks(markdown.render(text)) + FOOTER
+markdown = Redcarpet::Markdown.new(DoctoredRedcarpet, markdown_options)
+output = HEADER + markdown.render(text) + FOOTER
 puts output
