@@ -6,8 +6,9 @@ An absurdly simple script that renders your markdown to html.
 
 Markdown Doctor uses pygments for syntax highlighting code blocks.
 
-    $ pip install pygments
     $ gem install markdown_doctor
+
+Note: You'll also need Python installed on your system.
 
 ### Usage
 
