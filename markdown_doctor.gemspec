@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.executables = %w(markdown_doctor)
   s.files = `git ls-files`.split("\n")
 
-  s.add_dependency("nokogiri", "~> 1.5.0")
   s.add_dependency("pygments.rb", "~> 0.2.4")
   s.add_dependency("redcarpet", "~> 2.1.0")
 end
