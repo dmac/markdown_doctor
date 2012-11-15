@@ -16,7 +16,7 @@ To output to stdout:
 
     $ markdown_doctor <filename>
 
-To read from from stdin and output to stdout:
+To read from stdin and output to stdout:
 
     $ cat "this is a test" | markdown_doctor
 
