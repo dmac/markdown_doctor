@@ -4,7 +4,7 @@ An absurdly simple script that renders your markdown to html.
 
 **Update**: The latest and greatest version of this tool is [markdownd](https://github.com/cespare/markdownd).
 It contains many improvements, including the ability to watch for changes to your markdown files and
-automatically update them in a browser. It's also distributed as an executable and doesn't require Ruby.
+automatically update them in a browser. It's also distributed as a binary and doesn't require Ruby.
 
 ### Installation
 
